@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Alcool from './pages/Alcool'
 
-function App() {
+const App = () => {
     return (
         <>
             <Navbar />
@@ -17,4 +17,4 @@ function App() {
     )
 }
 
-export default App
+export default App;
