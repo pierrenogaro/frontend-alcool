@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const Home = () => {
     return (
         <div className="container">
@@ -9,13 +7,13 @@ const Home = () => {
                         <div className="mb-4 w-100 px-0">
                             <img
                                 src="/src/assets/banner.jpg"
-                                alt="Alcool Collection Banner"
+                                alt="Alcools Collection Banner"
                                 className="img-fluid w-100 shadow"
                                 style={{ height: '300px', objectFit: 'cover', width: '100%' }}
                             />
                         </div>
 
-                        <h1 className="display-4 mb-4">Alcool Collection</h1>
+                        <h1 className="display-4 mb-4">Alcools Collection</h1>
                         <p className="lead">Browse our collection of beverages.</p>
                     </div>
                 </div>

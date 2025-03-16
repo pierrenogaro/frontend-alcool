@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import Alcool from './pages/Alcool'
-
+import CreateAlcool from "./pages/alcools/CreateAlcool.jsx";
 import { AuthProvider } from './context/AuthContext'
 import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
+import Alcools from "./pages/alcools/Alcools.jsx";
 
 const App = () => {
     return (
@@ -14,7 +14,8 @@ const App = () => {
             <div className="container mt-4">
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/alcool" element={<Alcool />} />
+                    <Route path="/alcools" element={<Alcools />} />
+                    <Route path="/alcool/create" element={<CreateAlcool />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                 </Routes>
