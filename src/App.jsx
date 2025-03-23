@@ -6,6 +6,8 @@ import { AuthProvider } from './context/AuthContext'
 import Login from "./pages/auth/Login.jsx";
 import Register from "./pages/auth/Register.jsx";
 import Alcools from "./pages/alcools/Alcools.jsx";
+import AlcoolDetail from "./pages/alcools/AlcoolDetail.jsx";
+import EditAlcool from "./pages/alcools/EditAlcool.jsx";
 
 const App = () => {
     return (
@@ -15,6 +17,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/alcools" element={<Alcools />} />
+                    <Route path="/alcools/:id" element={<AlcoolDetail />} />
+                    <Route path="/alcools/edit/:id" element={<EditAlcool />} />
                     <Route path="/alcool/create" element={<CreateAlcool />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
