@@ -27,7 +27,7 @@ const CreateAlcool = () => {
                 .map(item => item.trim())
                 .filter(item => item !== '');
 
-            await axios.post('http://localhost:8081/alcools/create', {
+            await axios.post('https://alcool-api.pierrenogaro.com/alcools/create', {
                 name,
                 degree,
                 description,

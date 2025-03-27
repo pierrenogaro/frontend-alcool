@@ -18,7 +18,7 @@ const AlcoolDetail = () => {
     useEffect(() => {
         const fetchAlcoolDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:8081/alcools/${id}`);
+                const response = await axios.get(`https://alcool-api.pierrenogaro.com/alcools/${id}`);
                 setAlcool(response.data.alcool);
                 setComments(response.data.comments || []);
                 setLoading(false);
@@ -37,7 +37,7 @@ const AlcoolDetail = () => {
         }
 
         try {
-            await axios.delete(`http://localhost:8081/alcools/delete/${id}`, {
+            await axios.delete(`https://alcool-api.pierrenogaro.com/alcools/delete/${id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             navigate('/alcools');
@@ -48,7 +48,7 @@ const AlcoolDetail = () => {
 
     const handleCommentSubmit = async (content) => {
         try {
-            const response = await axios.post(`http://localhost:8081/comments/${id}`,
+            const response = await axios.post(`https://alcool-api.pierrenogaro.com/comments/${id}`,
                 { content },
                 { headers: { 'Authorization': `Bearer ${token}` }}
             );
@@ -74,7 +74,7 @@ const AlcoolDetail = () => {
         }
 
         try {
-            await axios.delete(`http://localhost:8081/comments/${commentId}`, {
+            await axios.delete(`https://alcool-api.pierrenogaro.com/comments/${commentId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setComments(comments.filter(comment => comment._id !== commentId));
@@ -85,7 +85,7 @@ const AlcoolDetail = () => {
 
     const handleCommentUpdate = async (commentId, content) => {
         try {
-            const response = await axios.put(`http://localhost:8081/comments/${commentId}`,
+            const response = await axios.put(`https://alcool-api.pierrenogaro.com/comments/${commentId}`,
                 { content },
                 { headers: { 'Authorization': `Bearer ${token}` }}
             );

@@ -19,7 +19,7 @@ const EditAlcool = () => {
     useEffect(() => {
         const fetchAlcool = async () => {
             try {
-                const response = await axios.get(`http://localhost:8081/alcools/${id}`);
+                const response = await axios.get(`https://alcool-api.pierrenogaro.com/alcools/${id}`);
                 const alcool = response.data.alcool;
 
                 setName(alcool.name || '');
@@ -53,7 +53,7 @@ const EditAlcool = () => {
                 .map(item => item.trim())
                 .filter(item => item !== '');
 
-            await axios.put(`http://localhost:8081/alcools/update/${id}`, {
+            await axios.put(`https://alcool-api.pierrenogaro.com/alcools/update/${id}`, {
                 name,
                 degree,
                 description,

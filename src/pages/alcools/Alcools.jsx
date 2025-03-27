@@ -11,7 +11,7 @@ const Alcools = () => {
 
     const fetchAlcools = () => {
         setLoading(true);
-        axios.get('http://localhost:8081/alcools/all')
+        axios.get('https://alcool-api.pierrenogaro.com/alcools/all')
             .then(response => {
                 setAlcools(response.data);
                 setLoading(false);
@@ -35,7 +35,7 @@ const Alcools = () => {
         }
 
         try {
-            await axios.delete(`http://localhost:8081/alcools/delete/${id}`, {
+            await axios.delete(`https://alcool-api.pierrenogaro.com/alcools/delete/${id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
