@@ -6,6 +6,13 @@ const Home = () => {
                     <div className="text-center">
                         <h1 className="display-4 mb-4">Alcools Collection</h1>
                         <p className="lead">Browse our collection of beverages.</p>
+                        <a href="https://data-viz-alcool.pierrenogaro.com/"
+                           className="btn btn-primary mt-3 px-4 py-2 rounded-pill shadow-sm"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i className="bi bi-bar-chart-fill me-2"></i>
+                            Explore Data-Viz
+                        </a>
                     </div>
                 </div>
             </div>
