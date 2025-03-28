@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {useAuth} from "../../context/AuthContext.jsx";
+import {LandingPage} from "./Landing.jsx";
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -70,6 +71,13 @@ const Login = () => {
                                     {loading ? 'Logging in...' : 'Login'}
                                 </button>
                             </form>
+
+                            <div className="mt-4 text-center">
+                                <p className="mb-2">Or login with:</p>
+                                <div className="d-flex justify-content-center">
+                                    <LandingPage/>
+                                </div>
+                            </div>
 
                             <div className="mt-3 text-center">
                                 <p>No account? <Link to="/register">Register</Link></p>
