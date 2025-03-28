@@ -1,4 +1,28 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 const Home = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8081/alcools/categories/all')
+            .then(response => setCategories(response.data))
+            .catch(err => console.error('Error fetching categories:', err));
+    }, []);
+
+    const color = (colorCat) => {
+        const colors = [
+            '#797e83',
+            '#722F37',
+            '#2ecc71',
+            '#f39c12',
+            '#9b59b6',
+            '#1abc9c',
+            '#34495e'
+        ];
+        return colors[colorCat];
+    };
+
     return (
         <div className="container">
             <div className="row mb-5">
@@ -14,6 +38,19 @@ const Home = () => {
                             Explore Data-Viz
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <div className="text-center mb-4">
+                <h5>Categories:</h5>
+                <div className="d-flex justify-content-center gap-2 flex-wrap">
+                    {categories.map((category, colorCat) => (
+                        <span
+                            key={category}
+                            className="badge"
+                            style={{backgroundColor: color(colorCat),}}>{category}
+                        </span>
+                    ))}
                 </div>
             </div>
 
